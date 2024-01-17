@@ -1,6 +1,30 @@
 import { DataTypes, Model } from "sequelize"
 import sequelize from "../db/sequelize.js"
 
+class Actor extends Model {}
+Actor.init(
+  {
+    actor_id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      allowNull: false
+    },
+    first_name: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    last_name: {
+      type: DataTypes.STRING,
+      allowNull: false
+    }
+  },
+  {
+    sequelize,
+    timestamps: false,
+    modelName: "actor"
+  }
+)
+
 class Film extends Model {}
 
 Film.init(
@@ -118,4 +142,4 @@ Category.belongsToMany(Film, {
   foreignKey: "category_id"
 })
 
-export { Film, Language, Category }
+export { Film, Language, Category, Actor }
