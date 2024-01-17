@@ -2,14 +2,14 @@ import Film from '../models/Film.js'
 
 const FilmType = `#graphql
   type Film {
-      film_id: ID!
-      title: String!
-      language_id: Int!
-      description: String
-      length: Int
-      rating: String
-      release_year: Int
-      language: Language!
+    film_id: ID!
+    title: String!
+    language_id: Int!
+    description: String
+    length: Int
+    rating: String
+    release_year: Int
+    language: Language!
   }
   `
 

@@ -5,7 +5,7 @@ import { } from './category.graphql.js'
 
 const QueryType = `#graphql
   type Query {
-    films(page: Int, pageSize: Int): [Film!]!
+    films (page: Int, pageSize: Int): [Film!]!
     film (id: ID!): Film
     languages: [Language!]!
     language (id: ID!): Language
