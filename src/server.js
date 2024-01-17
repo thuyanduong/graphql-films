@@ -4,7 +4,7 @@ import { graphqlHTTP } from "express-graphql"
 import schema from "./graphql/schema.js"
 
 const app = express()
-const port = process.env.PORT || 5003
+const port = process.env.PORT || 5005
 
 app.use("/api", rootRouter)
 

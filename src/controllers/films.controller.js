@@ -12,10 +12,4 @@ const getFilm = async (req, res, next) => {
   res.send(film)
 }
 
-const getFilmWithCategories = async (req, res, next) => {
-  const { id } = req.params
-  const film = await Film.getFilmWithCategories(id)
-  res.send(film)
-}
-
-export { getAllFilms, getFilm, getFilmWithCategories }
+export { getAllFilms, getFilm }

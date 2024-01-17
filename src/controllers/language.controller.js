@@ -11,10 +11,4 @@ const getLanguage = async (req, res, next) => {
   res.send(language)
 }
 
-const getLanguageWithFilms = async (req, res, next) => {
-  const { id } = req.params
-  const language = await Language.getLanguageWithFilms(id)
-  res.send(language)
-}
-
-export { getAllLanguages, getLanguage, getLanguageWithFilms }
+export { getAllLanguages, getLanguage }

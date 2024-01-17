@@ -6,10 +6,6 @@ class LanguageModel {
   }
 
   static async getLanguageById(language_id) {
-    return await Language.findByPk(language_id)
-  }
-
-  static async getLanguageWithFilms(language_id) {
     return await Language.findByPk(language_id, { include: Film })
   }
 

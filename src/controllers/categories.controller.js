@@ -11,10 +11,4 @@ const getCategory = async (req, res, next) => {
   res.send(category)
 }
 
-const getCategoryWithFilms = async (req, res, next) => {
-  const { id } = req.params
-  const category = await Category.getCategoryWithFilms(id)
-  res.send(category)
-}
-
-export { getAllCategories, getCategory, getCategoryWithFilms }
+export { getAllCategories, getCategory }

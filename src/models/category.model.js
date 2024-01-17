@@ -6,10 +6,6 @@ class CategoryModel {
   }
 
   static async getCategoryById(category_id) {
-    return await Category.findByPk(category_id)
-  }
-
-  static async getCategoryWithFilms(category_id) {
     return await Category.findByPk(category_id, { include: Film })
   }
 

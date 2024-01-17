@@ -2,7 +2,16 @@
 
 ## What is GraphQL?
 
-GraphQL stands for Graph Query Language used by API consumers to request the exact data for their needs from an API provider.
+GraphQL (Graph Query Language) is a syntax used by API consumers to request or mutate data from an API provider.
+
+Can be thought of as an alternative to REST APIs OR as an add-on to provide API Consumers more flexibilty and control over the data fetched. 
+
+## Example REST API
+
+`/api/films`      => returns basic info for 100 most recent films
+`/api/films/:id`  => returns in-depth info for a single film
+
+
 
 ## Benefits
 
@@ -23,8 +32,6 @@ Rather then demoing a GraphQL server, we'll look at building a GraphQL Layer on 
                 }`
 
 ## Feature Building
-
-
 
 ## Summary and Value Proposition
 

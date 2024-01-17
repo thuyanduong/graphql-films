@@ -11,13 +11,13 @@ const FilmType = `#graphql
     rating: String
     release_year: Int
     language: Language
-
+    categories: [Category]
   }
   `
 // Field values are populated from your back-end data stores via resolver functions.
 const filmsResolver = {
   Film: {
-
+    categories: async (parent) => await Film.getCategoriesForFilm(parent.film_id)
   }
 }
 

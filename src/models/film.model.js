@@ -11,11 +11,7 @@ class FilmModel {
   }
 
   static async getFilmById(film_id) {
-    return await Film.findByPk(film_id, { include: Language })
-  }
-
-  static async getFilmWithCategories(film_id) {
-    return await Film.findByPk(film_id, { include: Category })
+    return await Film.findByPk(film_id, { include: [Language, Category] })
   }
 
   static async getCategoriesForFilm(film_id) {
