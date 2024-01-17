@@ -1,12 +1,16 @@
-import express from 'express'
-import { getAllLanguages, getLanguage, getLanguageWithFilms } from '../controllers/language.controller.js'
+import express from "express";
+import {
+  getAllLanguages,
+  getLanguage,
+  getLanguageWithFilms,
+} from "../controllers/language.controller.js";
 
-const router = express.Router()
+const router = express.Router();
 
-router.get('/', getAllLanguages)
+router.get("/", getAllLanguages);
 
-router.get('/:id', getLanguage)
+router.get("/:id", getLanguage);
 
-router.get('/:id/films', getLanguageWithFilms)
+router.get("/:id/films", getLanguageWithFilms);
 
-export default router
+export default router;

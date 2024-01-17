@@ -1,4 +1,4 @@
-import Category from "../models/category.model.js"
+import Category from "../models/category.model.js";
 
 const CategoryType = `#graphql
   type Category {
@@ -6,19 +6,17 @@ const CategoryType = `#graphql
       name: String
       films: [Film]
   }
-  `
+  `;
 
 const categoriesResolver = {
-    Query: {
-        categories: async () => await Category.getCategories(),
-        category: async (_, args) => await Category.getCategoryById(args.id)
-    },
-    Category: {
-        films: async (parent) => await Category.getFilmsInCategory(parent.category_id)
-    }
-}
+  Query: {
+    categories: async () => await Category.getCategories(),
+    category: async (_, args) => await Category.getCategoryById(args.id),
+  },
+  Category: {
+    films: async (parent) =>
+      await Category.getFilmsInCategory(parent.category_id),
+  },
+};
 
-export {
-    CategoryType,
-    categoriesResolver
-}
+export { CategoryType, categoriesResolver };

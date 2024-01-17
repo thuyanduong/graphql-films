@@ -1,12 +1,16 @@
-import express from 'express'
-import { getAllFilms, getFilm, getFilmWithCategories } from '../controllers/films.controller.js'
+import express from "express";
+import {
+  getAllFilms,
+  getFilm,
+  getFilmWithCategories,
+} from "../controllers/films.controller.js";
 
-const router = express.Router()
+const router = express.Router();
 
-router.get('/', getAllFilms)
+router.get("/", getAllFilms);
 
-router.get('/:id', getFilm)
+router.get("/:id", getFilm);
 
-router.get('/:id/categories', getFilmWithCategories)
+router.get("/:id/categories", getFilmWithCategories);
 
-export default router
+export default router;

@@ -1,7 +1,7 @@
-import { makeExecutableSchema } from '@graphql-tools/schema'
-import { FilmType, filmsResolver } from './films.js'
-import { LanguageType, languagesResolver } from './languages.js'
-import { CategoryType, categoriesResolver } from './category.js'
+import { makeExecutableSchema } from "@graphql-tools/schema";
+import { FilmType, filmsResolver } from "./films.js";
+import { LanguageType, languagesResolver } from "./languages.js";
+import { CategoryType, categoriesResolver } from "./category.js";
 
 const QueryType = `#graphql
   type Query {
@@ -12,11 +12,11 @@ const QueryType = `#graphql
     categories: [Category]
     category (id: ID): Category
   }
-  `
+  `;
 
 const schema = makeExecutableSchema({
   typeDefs: [QueryType, FilmType, LanguageType, CategoryType],
-  resolvers: [filmsResolver, languagesResolver, categoriesResolver]
-})
+  resolvers: [filmsResolver, languagesResolver, categoriesResolver],
+});
 
-export default schema
+export default schema;

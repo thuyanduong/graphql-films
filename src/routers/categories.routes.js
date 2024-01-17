@@ -1,12 +1,16 @@
-import express from 'express'
-import { getAllCategories, getCategory, getCategoryWithFilms } from '../controllers/categories.controller.js'
+import express from "express";
+import {
+  getAllCategories,
+  getCategory,
+  getCategoryWithFilms,
+} from "../controllers/categories.controller.js";
 
-const router = express.Router()
+const router = express.Router();
 
-router.get('/', getAllCategories)
+router.get("/", getAllCategories);
 
-router.get('/:id', getCategory)
+router.get("/:id", getCategory);
 
-router.get('/:id/films', getCategoryWithFilms)
+router.get("/:id/films", getCategoryWithFilms);
 
-export default router
+export default router;

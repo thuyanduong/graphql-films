@@ -1,9 +1,11 @@
 ## Set Up Steps
+
 0. This demo app uses the [Pagila database](https://github.com/devrimgunduz/pagila)
 1. `npm install`
 2. `npm run dev`
 
 ### Creation Steps
+
 1. `npm init es6`
 2. `npm install --save-dev nodemon`
 3. `npm install express sequelize pg express-graphql graphql-tools`
