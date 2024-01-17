@@ -134,12 +134,41 @@ FilmCategory.init(
   }
 )
 
+class FilmActor extends Model {}
+
+FilmActor.init(
+  {
+    film_id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      references: {
+        model: Film,
+        key: "film_id"
+      },
+      allowNull: false
+    },
+    actor_id: {
+      type: DataTypes.STRING,
+      primaryKey: true,
+      references: {
+        model: Actor,
+        key: "actor_id"
+      },
+      allowNull: false
+    }
+  },
+  {
+    sequelize,
+    timestamps: false,
+    modelName: "film_actor"
+  }
+)
+
 Language.hasMany(Film, { foreignKey: "language_id" })
 Film.belongsTo(Language, { foreignKey: "language_id" })
 Film.belongsToMany(Category, { through: FilmCategory, foreignKey: "film_id" })
-Category.belongsToMany(Film, {
-  through: FilmCategory,
-  foreignKey: "category_id"
-})
+Category.belongsToMany(Film, { through: FilmCategory, foreignKey: "category_id"})
+Film.belongsToMany(Actor, {through: FilmActor, foreignKey: "film_id" })
+Actor.belongsToMany(Film, {through: FilmActor, foreignKey: "actor_id"})
 
 export { Film, Language, Category, Actor }

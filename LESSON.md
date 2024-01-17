@@ -1,38 +1,46 @@
-# Transitioning from a REST API to GraphQL
+# Should You Transition Your REST API to GraphQL?
 
 ## What is GraphQL?
 
 GraphQL (Graph Query Language) is a syntax used by API consumers to request or mutate data from an API provider.
 
-Can be thought of as an alternative to REST APIs OR as an add-on to provide API Consumers more flexibilty and control over the data fetched. 
+Can be thought of as an alternative to REST APIs 
+
+OR can be an added layer to provide API consumers more flexibilty and control over fetch data.
 
 ## Example REST API
 
-`/api/films`      => returns basic info for 100 most recent films
-`/api/films/:id`  => returns in-depth info for a single film
+REST APIs are fantastic! They offer a reliable and intuitive structure for API consumers.
 
+`/api/films` => returns basic info for the most recent films (default is 100 most recent films)
 
+`/api/films/:id` => returns in-depth info for a single film (such as the film's categories and actors)
 
-## Benefits
+But there are some drawbacks to REST as (1) your data grows and/or gets more complicated, (2) the number API consumers and their varying needs grow.
 
-1. Eliminates over-fetching and under-fetching
-2. Single, flexible endpoint that fit a variety of API consumers' needs
-3. Allows APIs to evole faster, quicker experimental features
-4. Legacy compatible by adding fields to the Graph
+##### Discussion!
+One of you API consumers wants in-depth info for the 10 most recent films. What are your options?
 
-## Code Demo
+## Demo
 
-Rather then demoing a GraphQL server, we'll look at building a GraphQL Layer on top of a legacy REST API.
+GraphQL provides a solution. It meets all the requirements of a typical REST API but allows for field selection and custom nested relationships.
 
-`/api/films` => `query {
-                   films
-                 }`
-`/api/films/1` => `query{
-                    film (id: 1)
-                }`
+## Benefits and Value Proposition
 
-## Feature Building
+1. Single, flexible endpoint that fit a variety of API consumers' needs
+2. Eliminates over-fetching and under-fetching
+3. Allows APIs to evole faster, quicker discoverability
+4. Can be built on top a REST API
 
-## Summary and Value Proposition
+## If Time Permits: Code Exploration
 
-#### When not to use GraphQL
+Rather then demoing a GraphQL only server, we'll look at a GraphQL Layer built on top of an existing REST API.
+
+## When not to use GraphQL
+- GraphQL does not use status codes (always returns 200, even when there are errors)
+- If you have a simple REST API, GraphQL will overcomplicate it
+- Your API has a small number of consumers and providers
+
+#### Resources
+- Code 
+- Demo API Endpoints

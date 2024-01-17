@@ -1,4 +1,4 @@
-import { Film, Language, Category } from "./index.js"
+import { Film, Language, Category, Actor } from "./index.js"
 import paginate from "../util/pagination.js"
 
 class FilmModel {
@@ -11,7 +11,7 @@ class FilmModel {
   }
 
   static async getFilmById(film_id) {
-    return await Film.findByPk(film_id, { include: [Language, Category] })
+    return await Film.findByPk(film_id, { include: [Language, Category, Actor] })
   }
 
   static async getCategoriesForFilm(film_id) {
