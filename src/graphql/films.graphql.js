@@ -10,7 +10,6 @@ const FilmType = `#graphql
       rating: String
       release_year: Int
       language: Language!
-      categories: [Category!]
   }
   `
 
@@ -19,9 +18,6 @@ const filmsResolver = {
         films: async (parent, args) => (await Film.getFilms(args.page, args.pageSize)),
         film: async (parent, args) => (await Film.getFilmById(args.id))
     },
-    Film: {
-        categories: async (parent, args) => (await Film.getFilmWithCategories(parent.film_id)).dataValues.categories
-    }
 }
 
 export {
