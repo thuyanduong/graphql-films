@@ -1,7 +1,7 @@
 import { DataTypes, Model } from 'sequelize'
 import sequelize from '../db/sequelize.js'
 
-class Film extends Model {}
+class Film extends Model { }
 
 Film.init({
   film_id: {
@@ -30,12 +30,12 @@ Film.init({
     type: DataTypes.INTEGER,
   }
 }, {
-  sequelize, 
+  sequelize,
   timestamps: false,
   modelName: 'film'
 });
 
-class Language extends Model {}
+class Language extends Model { }
 
 Language.init({
   language_id: {
@@ -48,38 +48,38 @@ Language.init({
     allowNull: false
   },
 }, {
-  sequelize, 
+  sequelize,
   timestamps: false,
   modelName: 'language'
 });
 
-class Category extends Model {}
+class Category extends Model { }
 
 Category.init({
-    category_id: {
-        type: DataTypes.INTEGER,
-        primaryKey: true,
-        allowNull: false
-      },
-      name: {
-        type: DataTypes.STRING,
-        allowNull: false
-      },
+  category_id: {
+    type: DataTypes.INTEGER,
+    primaryKey: true,
+    allowNull: false
+  },
+  name: {
+    type: DataTypes.STRING,
+    allowNull: false
+  },
 }, {
-  sequelize, 
+  sequelize,
   timestamps: false,
   modelName: 'category'
 });
 
-class FilmCategory extends Model {}
+class FilmCategory extends Model { }
 
 FilmCategory.init({
   film_id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
     references: {
-        model: Film, 
-        key: 'film_id'
+      model: Film,
+      key: 'film_id'
     },
     allowNull: false
   },
@@ -87,24 +87,24 @@ FilmCategory.init({
     type: DataTypes.STRING,
     primaryKey: true,
     references: {
-        model: Category, 
-        key:'category_id'
+      model: Category,
+      key: 'category_id'
     },
     allowNull: false
   },
 }, {
-  sequelize, 
+  sequelize,
   timestamps: false,
   modelName: 'film_category'
 });
 
-Language.hasMany(Film, {foreignKey: 'language_id'})
-Film.belongsTo(Language, {foreignKey: 'language_id'})
-Film.belongsToMany(Category, {through: FilmCategory, foreignKey: 'film_id'})
-Category.belongsToMany(Film, {through: FilmCategory, foreignKey: 'category_id'})
+Language.hasMany(Film, { foreignKey: 'language_id' })
+Film.belongsTo(Language, { foreignKey: 'language_id' })
+Film.belongsToMany(Category, { through: FilmCategory, foreignKey: 'film_id' })
+Category.belongsToMany(Film, { through: FilmCategory, foreignKey: 'category_id' })
 
 export {
-    Film,
-    Language,
-    Category
+  Film,
+  Language,
+  Category
 }

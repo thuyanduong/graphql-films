@@ -6,16 +6,16 @@ const getAllLanguages = async (req, res, next) => {
 }
 
 const getLanguage = async (req, res, next) => {
-    const {id} = req.params
+    const { id } = req.params
     const language = await Language.getLanguageById(id)
     res.send(language)
 }
 
 const getLanguageWithFilms = async (req, res, next) => {
-    const {id} = req.params
+    const { id } = req.params
     const language = await Language.getLanguageWithFilms(id)
     res.send(language)
-  }
+}
 
 export {
     getAllLanguages,

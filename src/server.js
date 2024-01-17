@@ -2,7 +2,7 @@ import express from 'express'
 import rootRouter from './routers/index.js'
 
 //Step 1. dependencies
-import {graphqlHTTP} from 'express-graphql'
+import { graphqlHTTP } from 'express-graphql'
 import schema from './graphql/schema.js'
 
 const app = express()

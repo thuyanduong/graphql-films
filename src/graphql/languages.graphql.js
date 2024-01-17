@@ -7,7 +7,7 @@ const LanguageType = `#graphql
       films: [Film!]
   }
   `
-  
+
 const languagesResolver = {
     Query: {
         languages: async () => await Language.getLanguages(),
@@ -19,6 +19,6 @@ const languagesResolver = {
 }
 
 export {
-    LanguageType, 
+    LanguageType,
     languagesResolver
 }

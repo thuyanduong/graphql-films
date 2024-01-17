@@ -23,7 +23,7 @@ const filmsResolver = {
         categories: async (parent) => (await Film.getFilmWithCategories(parent.film_id)).dataValues.categories
     }
 }
-  
+
 export {
     FilmType,
     filmsResolver

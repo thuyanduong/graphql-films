@@ -11,7 +11,7 @@ const CategoryType = `#graphql
 const categoriesResolver = {
   Query: {
     categories: async () => await Category.getCategories(),
-    category: async(parent, args) => await Category.getCategoryById(args.id)
+    category: async (parent, args) => await Category.getCategoryById(args.id)
   },
   Category: {
     films: async (parent) => (await Category.getCategoryWithFilms(parent.category_id)).dataValues.films
@@ -19,6 +19,6 @@ const categoriesResolver = {
 }
 
 export {
-    CategoryType,
-    categoriesResolver
+  CategoryType,
+  categoriesResolver
 }

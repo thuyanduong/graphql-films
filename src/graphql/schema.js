@@ -1,7 +1,7 @@
-import {makeExecutableSchema} from '@graphql-tools/schema'
-import {FilmType, filmsResolver} from './films.graphql.js'
-import {LanguageType, languagesResolver} from './languages.graphql.js'
-import {CategoryType, categoriesResolver} from './category.graphql.js'
+import { makeExecutableSchema } from '@graphql-tools/schema'
+import { FilmType, filmsResolver } from './films.graphql.js'
+import { LanguageType, languagesResolver } from './languages.graphql.js'
+import { CategoryType, categoriesResolver } from './category.graphql.js'
 
 const QueryType = `#graphql
   type Query {
@@ -16,8 +16,8 @@ const QueryType = `#graphql
 
 //Step 3. define a schema
 const schema = makeExecutableSchema({
-    typeDefs: [QueryType, FilmType, LanguageType, CategoryType], 
-    resolvers: [filmsResolver, languagesResolver, categoriesResolver]
-  })
+  typeDefs: [QueryType, FilmType, LanguageType, CategoryType],
+  resolvers: [filmsResolver, languagesResolver, categoriesResolver]
+})
 
 export default schema

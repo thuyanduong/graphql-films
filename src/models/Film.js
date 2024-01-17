@@ -1,4 +1,4 @@
-import {Film, Language, Category} from './index.js'
+import { Film, Language, Category } from './index.js'
 import paginate from '../util/pagination.js'
 
 class FilmModel {
@@ -12,11 +12,11 @@ class FilmModel {
     }
 
     static async getFilmById(id) {
-        return await Film.findByPk(id, {include: Language})
+        return await Film.findByPk(id, { include: Language })
     }
 
     static async getFilmWithCategories(id) {
-        return await Film.findByPk(id, {include: Category})
+        return await Film.findByPk(id, { include: Category })
     }
 }
 

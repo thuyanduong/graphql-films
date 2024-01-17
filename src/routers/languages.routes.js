@@ -1,5 +1,5 @@
 import express from 'express'
-import {getAllLanguages, getLanguage, getLanguageWithFilms} from '../controllers/language.controller.js'
+import { getAllLanguages, getLanguage, getLanguageWithFilms } from '../controllers/language.controller.js'
 
 const router = express.Router()
 
