@@ -1,4 +1,5 @@
 ## Set Up Steps
+0. This demo app uses the [Pagila database](https://github.com/devrimgunduz/pagila)
 1. `npm install`
 2. `npm run dev`
 
