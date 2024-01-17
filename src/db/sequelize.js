@@ -4,8 +4,8 @@ const sequelize = new Sequelize("dvdrental", "postgres", "", {
   host: "localhost",
   dialect: "postgres",
   define: {
-    freezeTableName: true,
-  },
+    freezeTableName: true
+  }
 })
 
 export default sequelize

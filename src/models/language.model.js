@@ -14,8 +14,7 @@ class LanguageModel {
   }
 
   static async getFilmsInLanguage(language_id) {
-    return (await Language.findByPk(language_id, { include: Film })).dataValues
-      .films
+    return (await Language.findByPk(language_id, { include: Film })).dataValues.films
   }
 }
 

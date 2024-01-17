@@ -6,7 +6,7 @@ class FilmModel {
     return await Film.findAll({
       order: [["film_id", "DESC"]],
       include: Language,
-      ...paginate(page, pageSize),
+      ...paginate(page, pageSize)
     })
   }
 
@@ -19,8 +19,7 @@ class FilmModel {
   }
 
   static async getCategoriesForFilm(film_id) {
-    return (await Film.findByPk(film_id, { include: Category })).dataValues
-      .categories
+    return (await Film.findByPk(film_id, { include: Category })).dataValues.categories
   }
 }
 

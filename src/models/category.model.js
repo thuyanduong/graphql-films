@@ -14,8 +14,7 @@ class CategoryModel {
   }
 
   static async getFilmsInCategory(category_id) {
-    return (await Category.findByPk(category_id, { include: Film })).dataValues
-      .films
+    return (await Category.findByPk(category_id, { include: Film })).dataValues.films
   }
 }
 

@@ -11,11 +11,11 @@ const LanguageType = `#graphql
 const languagesResolver = {
   Query: {
     languages: async () => await Language.getLanguages(),
-    language: async (_, args) => await Language.getLanguageById(args.id),
+    language: async (_, args) => await Language.getLanguageById(args.id)
   },
   Language: {
-    films: async (parent) => await Language.getFilmsInLanguage(parent.language_id),
-  },
+    films: async (parent) => await Language.getFilmsInLanguage(parent.language_id)
+  }
 }
 
 export { LanguageType, languagesResolver }

@@ -2,7 +2,7 @@ import express from "express"
 import {
   getAllCategories,
   getCategory,
-  getCategoryWithFilms,
+  getCategoryWithFilms
 } from "../controllers/categories.controller.js"
 
 const router = express.Router()

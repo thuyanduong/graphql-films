@@ -8,33 +8,33 @@ Film.init(
     film_id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
-      allowNull: false,
+      allowNull: false
     },
     title: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: false
     },
     language_id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: false
     },
     description: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING
     },
     release_year: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.INTEGER
     },
     rating: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING
     },
     length: {
-      type: DataTypes.INTEGER,
-    },
+      type: DataTypes.INTEGER
+    }
   },
   {
     sequelize,
     timestamps: false,
-    modelName: "film",
+    modelName: "film"
   }
 )
 
@@ -45,17 +45,17 @@ Language.init(
     language_id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
-      allowNull: false,
+      allowNull: false
     },
     name: {
       type: DataTypes.STRING,
-      allowNull: false,
-    },
+      allowNull: false
+    }
   },
   {
     sequelize,
     timestamps: false,
-    modelName: "language",
+    modelName: "language"
   }
 )
 
@@ -66,17 +66,17 @@ Category.init(
     category_id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
-      allowNull: false,
+      allowNull: false
     },
     name: {
       type: DataTypes.STRING,
-      allowNull: false,
-    },
+      allowNull: false
+    }
   },
   {
     sequelize,
     timestamps: false,
-    modelName: "category",
+    modelName: "category"
   }
 )
 
@@ -89,24 +89,24 @@ FilmCategory.init(
       primaryKey: true,
       references: {
         model: Film,
-        key: "film_id",
+        key: "film_id"
       },
-      allowNull: false,
+      allowNull: false
     },
     category_id: {
       type: DataTypes.STRING,
       primaryKey: true,
       references: {
         model: Category,
-        key: "category_id",
+        key: "category_id"
       },
-      allowNull: false,
-    },
+      allowNull: false
+    }
   },
   {
     sequelize,
     timestamps: false,
-    modelName: "film_category",
+    modelName: "film_category"
   }
 )
 
@@ -115,7 +115,7 @@ Film.belongsTo(Language, { foreignKey: "language_id" })
 Film.belongsToMany(Category, { through: FilmCategory, foreignKey: "film_id" })
 Category.belongsToMany(Film, {
   through: FilmCategory,
-  foreignKey: "category_id",
+  foreignKey: "category_id"
 })
 
 export { Film, Language, Category }

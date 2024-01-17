@@ -12,7 +12,7 @@ app.use(
   "/graphql",
   graphqlHTTP({
     graphiql: true,
-    schema: schema,
+    schema: schema
   })
 )
 

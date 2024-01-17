@@ -16,7 +16,7 @@ const QueryType = `#graphql
 
 const schema = makeExecutableSchema({
   typeDefs: [QueryType, FilmType, LanguageType, CategoryType],
-  resolvers: [filmsResolver, languagesResolver, categoriesResolver],
+  resolvers: [filmsResolver, languagesResolver, categoriesResolver]
 })
 
 export default schema

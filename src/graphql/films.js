@@ -17,11 +17,11 @@ const FilmType = `#graphql
 const filmsResolver = {
   Query: {
     films: async (_, args) => await Film.getFilms(args.page, args.pageSize),
-    film: async (_, args) => await Film.getFilmById(args.id),
+    film: async (_, args) => await Film.getFilmById(args.id)
   },
   Film: {
-    categories: async (parent) => await Film.getCategoriesForFilm(parent.film_id),
-  },
+    categories: async (parent) => await Film.getCategoriesForFilm(parent.film_id)
+  }
 }
 
 export { FilmType, filmsResolver }

@@ -6,7 +6,7 @@ const paginate = (p, pS) => {
 
   return {
     offset,
-    limit,
+    limit
   }
 }
 
