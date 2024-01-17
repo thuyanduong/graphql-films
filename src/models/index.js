@@ -1,5 +1,5 @@
-import { DataTypes, Model } from "sequelize";
-import sequelize from "../db/sequelize.js";
+import { DataTypes, Model } from "sequelize"
+import sequelize from "../db/sequelize.js"
 
 class Film extends Model {}
 
@@ -36,7 +36,7 @@ Film.init(
     timestamps: false,
     modelName: "film",
   }
-);
+)
 
 class Language extends Model {}
 
@@ -57,7 +57,7 @@ Language.init(
     timestamps: false,
     modelName: "language",
   }
-);
+)
 
 class Category extends Model {}
 
@@ -78,7 +78,7 @@ Category.init(
     timestamps: false,
     modelName: "category",
   }
-);
+)
 
 class FilmCategory extends Model {}
 
@@ -108,14 +108,14 @@ FilmCategory.init(
     timestamps: false,
     modelName: "film_category",
   }
-);
+)
 
-Language.hasMany(Film, { foreignKey: "language_id" });
-Film.belongsTo(Language, { foreignKey: "language_id" });
-Film.belongsToMany(Category, { through: FilmCategory, foreignKey: "film_id" });
+Language.hasMany(Film, { foreignKey: "language_id" })
+Film.belongsTo(Language, { foreignKey: "language_id" })
+Film.belongsToMany(Category, { through: FilmCategory, foreignKey: "film_id" })
 Category.belongsToMany(Film, {
   through: FilmCategory,
   foreignKey: "category_id",
-});
+})
 
-export { Film, Language, Category };
+export { Film, Language, Category }

@@ -1,4 +1,4 @@
-import { Sequelize } from "sequelize";
+import { Sequelize } from "sequelize"
 
 const sequelize = new Sequelize("dvdrental", "postgres", "", {
   host: "localhost",
@@ -6,6 +6,6 @@ const sequelize = new Sequelize("dvdrental", "postgres", "", {
   define: {
     freezeTableName: true,
   },
-});
+})
 
-export default sequelize;
+export default sequelize

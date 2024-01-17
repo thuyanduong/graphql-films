@@ -1,4 +1,4 @@
-import Film from "../models/film.model.js";
+import Film from "../models/film.model.js"
 
 const FilmType = `#graphql
   type Film {
@@ -12,7 +12,7 @@ const FilmType = `#graphql
     language: Language
     categories: [Category]
   }
-  `;
+  `
 
 const filmsResolver = {
   Query: {
@@ -20,9 +20,8 @@ const filmsResolver = {
     film: async (_, args) => await Film.getFilmById(args.id),
   },
   Film: {
-    categories: async (parent) =>
-      await Film.getCategoriesForFilm(parent.film_id),
+    categories: async (parent) => await Film.getCategoriesForFilm(parent.film_id),
   },
-};
+}
 
-export { FilmType, filmsResolver };
+export { FilmType, filmsResolver }
