@@ -10,8 +10,8 @@ const LanguageType = `#graphql
 
 const languagesResolver = {
     Query: {
-        languages: async () => await Language.getLanguages(),
-        language: async (parent, args) => await Language.getLanguageById(args.id)
+        languages: async () => (await Language.getLanguages()),
+        language: async (parent, args) => (await Language.getLanguageById(args.id))
     },
     Language: {
         films: async (parent) => (await Language.getLanguageWithFilms(parent.language_id)).dataValues.films
