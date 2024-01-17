@@ -1,4 +1,4 @@
-import Film from '../models/Film.js'
+import Film from '../models/film.model.js'
 
 const getAllFilms = async (req, res, next) => {
     const { page, pageSize } = req.query
