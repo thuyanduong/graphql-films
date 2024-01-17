@@ -1,5 +1,6 @@
 import Category from "../models/category.model.js"
 
+// A GraphQL needs you to define all fields and their data types.
 const CategoryType = `#graphql
   type Category {
       category_id: ID
@@ -8,11 +9,8 @@ const CategoryType = `#graphql
   }
   `
 
+// Field values are populated from your back-end data stores via resolver functions.
 const categoriesResolver = {
-  Query: {
-    categories: async () => await Category.getCategories(),
-    category: async (_, args) => await Category.getCategoryById(args.id)
-  },
   Category: {
     films: async (parent) => await Category.getFilmsInCategory(parent.category_id)
   }

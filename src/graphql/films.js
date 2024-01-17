@@ -1,5 +1,6 @@
 import Film from "../models/film.model.js"
 
+// A GraphQL needs you to define all fields and their data types.
 const FilmType = `#graphql
   type Film {
     film_id: ID 
@@ -10,17 +11,13 @@ const FilmType = `#graphql
     rating: String
     release_year: Int
     language: Language
-    categories: [Category]
+
   }
   `
-
+// Field values are populated from your back-end data stores via resolver functions.
 const filmsResolver = {
-  Query: {
-    films: async (_, args) => await Film.getFilms(args.page, args.pageSize),
-    film: async (_, args) => await Film.getFilmById(args.id)
-  },
   Film: {
-    categories: async (parent) => await Film.getCategoriesForFilm(parent.film_id)
+
   }
 }
 

@@ -8,6 +8,9 @@ const port = process.env.PORT || 5003
 
 app.use("/api", rootRouter)
 
+// Create a GraphQL endpoint using the express-graphql module.
+// The IDE we'll use to query our server is called graphiql.
+// The schema describes the shape of our available data.
 app.use("/graphql", graphqlHTTP({ graphiql: true, schema: schema }))
 
 app.get("/", async (req, res) => {
@@ -15,5 +18,5 @@ app.get("/", async (req, res) => {
 })
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
+  console.log(`Example app running on http://localhost:${port}`)
 })
