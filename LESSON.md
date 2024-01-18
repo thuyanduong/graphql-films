@@ -6,7 +6,7 @@ GraphQL (Graph Query Language) is a syntax used by API consumers to request or m
 
 Can be thought of as an alternative to REST APIs 
 
-OR can be an added layer to provide API consumers more flexibilty and control over fetch data.
+OR can be an added layer to provide API consumers more flexibility and control over fetching data.
 
 ## Example REST API
 
@@ -42,5 +42,13 @@ Rather then demoing a GraphQL only server, we'll look at a GraphQL Layer built o
 - Your API has a small number of consumers and providers
 
 #### Resources
-- Code 
+- [Code](https://github.com/thuyanduong/graphql-films)
 - Demo API Endpoints
+  - `/api/films`
+  - `/api/films/:id`
+  - `/api/languages`
+  - `/api/languages/:id`
+  - `/api/categories`
+  - `/api/categories/:id`
+  - `/api/actors`
+  - `/api/actors/:id`

@@ -1,13 +1,24 @@
 ## Set Up Steps
 
-0. This demo app uses the [Pagila database](https://github.com/devrimgunduz/pagila)
-1. `npm install`
-2. `npm run dev`
+1. This demo app uses the [Pagila database](https://github.com/devrimgunduz/pagila). Download a copy of the database into your local Postgres.
+2. Clone down the repo 
+3. Update the file `src/db/sequelize.js` to your local database.
+2. Run `npm install`
+3. Run `npm run dev` to start the API
 
-### Creation Steps
+## Endpoints
 
-1. `npm init es6`
-2. `npm install --save-dev nodemon`
-3. `npm install express sequelize pg express-graphql graphql-tools`
-4. Create `src/server.js` file
-5. Update `package.json` to `"scripts": {"dev": "nodemon server.js"}`
+REST API Endpoints
+
+- `/api/films`
+- `/api/films/:id`
+- `/api/languages`
+- `/api/languages/:id`
+- `/api/categories`
+- `/api/categories/:id`
+- `/api/actors`
+- `/api/actors/:id`
+
+GraphQL Endpoint
+
+- `/graphql`
