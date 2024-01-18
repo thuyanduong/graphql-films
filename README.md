@@ -1,10 +1,10 @@
 ## Set Up Steps
 
-1. This demo app uses the [Pagila database](https://github.com/devrimgunduz/pagila). Download a copy of the database into your local Postgres.
-2. Clone down the repo 
-3. Update the file `src/db/sequelize.js` to your local database.
-2. Run `npm install`
-3. Run `npm run dev` to start the API
+1. This demo app uses the [Pagila database](https://github.com/devrimgunduz/pagila). Download a copy of the database to your local Postgres.
+2. Clone down the repo.
+3. Update the file `src/db/sequelize.js` with your local database information.
+2. Run `npm install`.
+3. Run `npm run dev` to start the API.
 
 ## Endpoints
 
