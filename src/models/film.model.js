@@ -4,8 +4,8 @@ import paginate from "../util/pagination.js"
 class FilmModel {
   static async getFilms(page, pageSize) {
     return await Film.findAll({
-      order: [["film_id", "DESC"]],
-      include: Language,
+      order: [["film_id", "ASC"]],
+      // include: Language,
       ...paginate(page, pageSize)
     })
   }

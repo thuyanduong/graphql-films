@@ -29,7 +29,7 @@ GraphQL provides a solution. It meets all the requirements of a typical REST API
 
 1. Single, flexible endpoint that fit a variety of API consumers' needs
 2. Eliminates over-fetching and under-fetching
-3. Allows APIs to evole faster, quicker discoverability
+3. Allows the API to evolve faster to meet the ever-growing needs of your API consumers
 4. Can be built on top a REST API
 
 ## If Time Permits: Code Exploration
